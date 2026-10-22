@@ -52,8 +52,7 @@ df_core = (pl
 df_mort = (df_core
     .explode("symptoms")
     .join(harmonized, on="symptoms", how="right")
-    # Same "[code]" format as SwED, so that the dummy columns match those of the mortality model.
-    .with_columns(pl.format("[{}]", pl.col("SNOMED-CT").cast(pl.String).str.strip_chars("[]")).alias("symptoms"))
+    .with_columns(pl.col("SNOMED-CT").alias("symptoms"))
     .select(
         "ed_age", "is_male", "mort_30d", "symptoms"
     )

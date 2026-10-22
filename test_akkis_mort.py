@@ -33,6 +33,10 @@ snomed = load_snomed_en()
 
 print("Fixing symptoms differences...")
 all_columns = np.loadtxt("models/columns/columns_mortality.csv", dtype=str).tolist()
+# Match symptoms by code, whatever the bracket style of the dataset or of the columns file.
+strip_brackets = lambda c: c.replace("[", "").replace("]", "")
+all_columns = [strip_brackets(c) for c in all_columns]
+X = X.rename(strip_brackets)
 print("SwED  :", len(set(all_columns)))
 print("Uppsal:", len(set(X.columns)))
 missing_columns = set(all_columns) - set(X.columns)
