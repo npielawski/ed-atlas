@@ -13,7 +13,8 @@ This document is a recipe. Follow it from top to bottom.
 
 ## 1. Requirements
 
-- Python 3.11 with `polars`, `fastexcel`, `pymc`, `numpyro`, `jax`, `arviz`, `patsy`, `xarray`, `numpy`, `scipy`, `scikit-learn`, `optax`, `matplotlib`, `pandas`, `geopandas`, `tqdm`, `netcdf4`. Use `polars<2` (the scripts were last checked with 1.40.1; 2.0 changed `read_csv(columns=..., new_columns=...)`). The traces in the paper were sampled with PyMC 5, numpyro 0.15 and ArviZ 0.20.
+- Python 3.11 with `polars`, `fastexcel`, `pymc`, `numpyro`, `jax`, `arviz`, `patsy`, `xarray`, `numpy`, `scipy`, `scikit-learn`, `optax`, `matplotlib`, `pandas`, `geopandas`, `tqdm`, `netcdf4`.
+  The paper's models and scores were produced with polars 1.9.0, PyMC 5.17.0, numpyro 0.15.3, ArviZ 0.20.0, JAX 0.4.31, pandas 2.2.3 and numba 0.60.0. The scripts also ran with polars 1.40.1 and PyMC 5.28. Use `polars<2`: version 2.0 changed `read_csv(columns=..., new_columns=...)`.
 - [Miller](https://miller.readthedocs.io) (`mlr`) and `gunzip`, for step 2c only.
 - Training the 930 diagnosis models is compute heavy (a GPU and a cluster make it practical). The mortality model and every plot run on a laptop.
 
