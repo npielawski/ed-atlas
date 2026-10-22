@@ -3,3 +3,4 @@ work/
 __pycache__/
 .DS_Store
 to_snd/
+to_snd_stripped/
