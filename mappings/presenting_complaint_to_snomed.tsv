@@ -1,0 +1,179 @@
+ed_presented_complaint_nonstd	OLD_ed_presented_complaint_std	NEW_ed_presented_complaint_std	not_snomed
+6PROV - PROVTAGNING		provtagning utförd av hälso- och sjukvårdspersonal [1208523001]	FALSE
+AARM	fynd som rör arm [116307009]	armproblem [724625003]	FALSE
+AARM/HAN - ARM/HAND	fynd som rör arm [116307009]+fynd som rör handregion [116311003]	armproblem [724625003]+handproblem [724628001]	FALSE
+AARMBÅ	fynd som rör armbågsregion [116309007]	armbågsproblem [724626002]	FALSE
+AATNER	allmänt hälsotillstånd dåligt [135818000]	försämring av allmänt hälsotillstånd [285384003]	FALSE
+ABEN	fynd som rör nedre extremitet [116312005]	benproblem [724632007]	FALSE
+ACBS		central bröstsmärta [161972006]	FALSE
+ACORIN		hjärtsvikt [84114007]	FALSE
+AFINGRAR	fynd som rör finger [313132009]	fingerproblem [724629009]	FALSE
+AFOT	fynd som rör fotregionen [116316008]	ankel- och/eller fotproblem [59491000052101]	FALSE
+AHAND	fynd som rör handregion [116311003]	handproblem [724628001]	FALSE
+AHEMOPT - HEMOPTYS	rent blod i sputum [301290008]	hemoptys [66857006]	FALSE
+AHYPOGLY - HYPOGLYKEMI	sänkt glukosnivå [51798006]	hypoglykemi [302866003]	FALSE
+AHÖFT	fynd som rör höftregion [116313000]	höftproblem [724630004]	FALSE
+AKNÄ	fynd som rör knäregion [116314006]	problem med knä [309566008]	FALSE
+ALLVARLH		nosct:serious_event	TRUE
+ALLVARLIG HÄNDELSE (KIR)		nosct:serious_event	TRUE
+ALLVARLIG HÄNDELSE (MED)		nosct:serious_event	TRUE
+ALLVARLIG HÄNDELSE (ORT)		nosct:serious_event	TRUE
+ANSIKTE - ANSIKTE	fynd som rör ansiktet [301310005]	ansiktsproblem [59371000052108]	FALSE
+APROVSV - PROVSVAR		nosct:test_result	TRUE
+ARM	fynd som rör arm [116307009]	armproblem [724625003]	FALSE
+ARM - ARM/ARMBÅGE	fynd som rör arm [116307009]	armproblem [724625003]	FALSE
+ARM - Arm	fynd som rör arm [116307009]	armproblem [724625003]	FALSE
+ARMBÅGE	fynd som rör armbågsregion [116309007]	armbågsproblem [724626002]	FALSE
+ARYGG	fynd som rör ryggen [414252009]	ryggproblem [302258001]	FALSE
+AT NER	allmänt hälsotillstånd dåligt [135818000]	försämring av allmänt hälsotillstånd [285384003]	FALSE
+AT-NER	allmänt hälsotillstånd dåligt [135818000]	försämring av allmänt hälsotillstånd [285384003]	FALSE
+Allvarlig händelse (kir)		nosct:serious_event	TRUE
+Allvarlig händelse (med)		nosct:serious_event	TRUE
+Allvarlig händelse (ort)		nosct:serious_event	TRUE
+Anemi/blodsjukdom	lågt hemoglobinvärde [165397008]	lågt hemoglobinvärde [165397008]+sjukdom i blod och/eller blodbildande organ [191124002]	FALSE
+Arm	fynd som rör arm [116307009]	armproblem [724625003]	FALSE
+Armbåge	fynd som rör armbågsregion [116309007]	armbågsproblem [724626002]	FALSE
+BEN	fynd som rör nedre extremitet [116312005]	benproblem [724632007]	FALSE
+BEN - BEN	fynd som rör nedre extremitet [116312005]	benproblem [724632007]	FALSE
+BEN - Ben	fynd som rör nedre extremitet [116312005]	benproblem [724632007]	FALSE
+BLODHOST	rent blod i sputum [301290008]	hemoptys [66857006]	FALSE
+BLODHOST - Hemoptys	rent blod i sputum [301290008]	hemoptys [66857006]	FALSE
+BLODIG UPPHOSTNING	rent blod i sputum [301290008]	hemoptys [66857006]	FALSE
+BLODSJ.D.		sjukdom i blod och/eller blodbildande organ [191124002]	FALSE
+BLODSJUK		sjukdom i blod och/eller blodbildande organ [191124002]	FALSE
+BLODSOCKER HÖGT	förhöjd glukoshalt [68256003]	hyperglykemi [80394007]	FALSE
+BLODSOCKER LÅGT	sänkt glukosnivå [51798006]	hypoglykemi [302866003]	FALSE
+BLSRHÖGT	förhöjd glukoshalt [68256003]	hyperglykemi [80394007]	FALSE
+BLSRLÅGT	sänkt glukosnivå [51798006]	hypoglykemi [302866003]	FALSE
+BRSMAND	bröstsmärta [29857009]+har svårt att andas [230145002]	bröstsmärta vid andning [274664007]	FALSE
+BRÖST		bröstbesvär [290085007]	FALSE
+BUP - BUP		barn- och ungdomspsykiatri [394588006]	FALSE
+Ben	fynd som rör nedre extremitet [116312005]	benproblem [724632007]	FALSE
+Blodhosta/hemoptys	rent blod i sputum [301290008]	hemoptys [66857006]	FALSE
+Blodig upphostning	rent blod i sputum [301290008]	hemoptys [66857006]	FALSE
+Blodsjukdom		sjukdom i blod och/eller blodbildande organ [191124002]	FALSE
+Blodsocker högt	förhöjd glukoshalt [68256003]	hyperglykemi [80394007]	FALSE
+Blodsocker lågt	sänkt glukosnivå [51798006]	hypoglykemi [302866003]	FALSE
+Blodsocker, högt	förhöjd glukoshalt [68256003]	hyperglykemi [80394007]	FALSE
+Blodsocker, lågt	sänkt glukosnivå [51798006]	hypoglykemi [302866003]	FALSE
+Bröstbesvär		bröstbesvär [290085007]	FALSE
+BÅRFALL		fall från ambulansbår [242417008]	FALSE
+DESTR - Självdestruktivt beteende	självskadebeteende [248062006]	självdestruktivt beteende [1157096002]	FALSE
+EXT - EXTERNT BESÖK TEX HEMBESÖK	hembesök [439708006]	erhållit hembesök [183737004]	FALSE
+F-VS - FOT VÅRDSLUSS	fynd som rör fotregionen [116316008]	ankel- och/eller fotproblem [59491000052101]	FALSE
+FINGER	fynd som rör finger [313132009]	fingerproblem [724629009]	FALSE
+FINGER - FINGER	fynd som rör finger [313132009]	fingerproblem [724629009]	FALSE
+FINGER - Finger	fynd som rör finger [313132009]	fingerproblem [724629009]	FALSE
+FOT	fynd som rör fotregionen [116316008]	ankel- och/eller fotproblem [59491000052101]	FALSE
+FOT - FOT/TÅ	fynd som rör fotregionen [116316008]	ankel- och/eller fotproblem [59491000052101]	FALSE
+FOT - Fot	fynd som rör fotregionen [116316008]	ankel- och/eller fotproblem [59491000052101]	FALSE
+FOTLED	fynd som rör fotled [299413005]	ankelproblem [724633002]	FALSE
+Finger	fynd som rör finger [313132009]	fingerproblem [724629009]	FALSE
+Fot	fynd som rör fotregionen [116316008]	ankel- och/eller fotproblem [59491000052101]	FALSE
+Fotled	fynd som rör fotled [299413005]	ankelproblem [724633002]	FALSE
+FÖRSÄMRA - Försämrat AT	allmänt hälsotillstånd dåligt [135818000]	försämring av allmänt hälsotillstånd [285384003]	FALSE
+GIPS		nosct:plaster	TRUE
+GIPS - GIPS		nosct:plaster	TRUE
+H-VS - HÖFT VÅRDSLUSS	fynd som rör höftregion [116313000]	höftproblem [724630004]	FALSE
+HA-VS - HAND VÅRDSLUSS	fynd som rör handregion [116311003]	handproblem [724628001]	FALSE
+HAND	fynd som rör handregion [116311003]	handproblem [724628001]	FALSE
+HAND - HAND/HANDLED	fynd som rör handled [298940007]+fynd som rör handregion [116311003]	handproblem [724628001]+handledsproblem [724627006]	FALSE
+HAND - Hand	fynd som rör handregion [116311003]	handproblem [724628001]	FALSE
+HAND - Hand/handled	fynd som rör handled [298940007]+fynd som rör handregion [116311003]	handproblem [724628001]+handledsproblem [724627006]	FALSE
+HANDLED	fynd som rör handled [298940007]	handledsproblem [724627006]	FALSE
+HEMOPT	rent blod i sputum [301290008]	hemoptys [66857006]	FALSE
+HEMOPTYS - HEMOPTYS	rent blod i sputum [301290008]	hemoptys [66857006]	FALSE
+HYPERGL	förhöjd glukoshalt [68256003]	hyperglykemi [80394007]	FALSE
+HYPOGL	sänkt glukosnivå [51798006]	hypoglykemi [80394007]	FALSE
+HYPOGLU	sänkt glukosnivå [51798006]	hypoglykemi [80394007]	FALSE
+HYPOGLY - HYPOGLYKEMI	sänkt glukosnivå [51798006]	hypoglykemi [80394007]	FALSE
+Hand	fynd som rör handregion [116311003]	handproblem [724628001]	FALSE
+Handled	fynd som rör handled [298940007]	handledsproblem [724627006]	FALSE
+Hemoptys	rent blod i sputum [301290008]	hemoptys [66857006]	FALSE
+Hudrodnad	rodnad [20255002]	rodnad [20255002]+hudproblem [297982009]	FALSE
+Hyperglykemi	förhöjd glukoshalt [68256003]	hyperglykemi [80394007]	FALSE
+Hypoglycemi	sänkt glukosnivå [51798006]	hypoglykemi [80394007]	FALSE
+Hypoglykemi	sänkt glukosnivå [51798006]	hypoglykemi [80394007]	FALSE
+HÖFT	fynd som rör höftregion [116313000]	höftproblem [724630004]	FALSE
+HÖFT - HÖFT	fynd som rör höftregion [116313000]	höftproblem [724630004]	FALSE
+HÖFT - Höft	fynd som rör höftregion [116313000]	höftproblem [724630004]	FALSE
+HÖFT - Höft-övrigt	fynd som rör höftregion [116313000]	höftproblem [724630004]	FALSE
+Höft	fynd som rör höftregion [116313000]	höftproblem [724630004]	FALSE
+Högt blodsocker/hyperglykemi	förhöjd glukoshalt [68256003]	hyperglykemi [80394007]	FALSE
+INFKÄKE		infektionssjukdom [40733004]+käkproblem [724623005]	FALSE
+KAD - KATETER		urinkateter [20568009]	FALSE
+KNÄ	fynd som rör knäregion [116314006]	problem med knä [309566008]	FALSE
+KNÄ - KNÄ	fynd som rör knäregion [116314006]	problem med knä [309566008]	FALSE
+KNÄ - Knä	fynd som rör knäregion [116314006]	problem med knä [309566008]	FALSE
+KNÄ - Knä-övrigt	fynd som rör knäregion [116314006]	problem med knä [309566008]	FALSE
+Kind		nosct:cheek_problem	TRUE
+Kindbesvär		nosct:cheek_problem	TRUE
+Knä	fynd som rör knäregion [116314006]	problem med knä [309566008]	FALSE
+Knäled	fynd som rör knäregion [116314006]	problem med knä [309566008]	FALSE
+KÄRLKIR		kärlkirurgi [408463005]	FALSE
+LAB - Laboratorieprov		provtagning utförd av hälso- och sjukvårdspersonal [1208523001]	FALSE
+LABB		provtagning utförd av hälso- och sjukvårdspersonal [1208523001]	FALSE
+Labbsvar		nosct:test_result	TRUE
+Lågt blodsocker/hypoglykemi	sänkt glukosnivå [51798006]	hypoglykemi [302866003]	FALSE
+Lårben	fynd som rör lår [419003001]	lårproblem [724631000]	FALSE
+Myndighet önskar undersökning	allmän undersökning av patient [162673000]	önskar hälsoundersökning [64521000052105]	FALSE
+NEDSATT - Nedsatt AT	allmänt hälsotillstånd dåligt [135818000]	försämring av allmänt hälsotillstånd [285384003]	FALSE
+Nedsatt allm.tillst.	allmänt hälsotillstånd dåligt [135818000]	försämring av allmänt hälsotillstånd [285384003]	FALSE
+OKLARSJ - Oklar  sjukdom		sjukdomstyp och/eller sjukdomskategori okänd [3219008]	FALSE
+OP - OPERATION		kirurgisk åtgärd [387713003]	FALSE
+OSPEC		sjukdomstyp och/eller sjukdomskategori okänd [3219008]	FALSE
+OSPEC - Ospecifik sjukdom		sjukdomstyp och/eller sjukdomskategori okänd [3219008]	FALSE
+OSPECSJ		sjukdomstyp och/eller sjukdomskategori okänd [3219008]	FALSE
+Ospecificerad kontaktorsak		sjukdomstyp och/eller sjukdomskategori okänd [3219008]	FALSE
+Ospecifik sjukdom		sjukdomstyp och/eller sjukdomskategori okänd [3219008]	FALSE
+PERCIRK		perifer kärlsjukdom [400047006]	FALSE
+PK-KOLL	prov från venöst blod (serum eller plasma) [703432000]	blodkoagulationsstatus [404995006]	FALSE
+POLOP - POLOP		poliklinisk kirurgisk åtgärd [110468005]	FALSE
+PROV - PROVTAGNING		provtagning utförd av hälso- och sjukvårdspersonal [1208523001]	FALSE
+PROV - Provtagning		provtagning utförd av hälso- och sjukvårdspersonal [1208523001]	FALSE
+PROVSVAR - PROVSVAR		nosct:test_result	TRUE
+PROVT		provtagning utförd av hälso- och sjukvårdspersonal [1208523001]	FALSE
+PROVT - PROVTAGNING		provtagning utförd av hälso- och sjukvårdspersonal [1208523001]	FALSE
+PROVTAG - Provtagning		provtagning utförd av hälso- och sjukvårdspersonal [1208523001]	FALSE
+PROVTAGN		provtagning utförd av hälso- och sjukvårdspersonal [1208523001]	FALSE
+Panna		ansiktsproblem [59371000052108]+panna, struktur [52795006]	FALSE
+Provsvar		nosct:test_result	TRUE
+Provsvarsalgoritm		nosct:test_result	TRUE
+Provtagning		provtagning utförd av hälso- och sjukvårdspersonal [1208523001]	FALSE
+RAKA - RAKA SPÅRET HÖFT	fraktur på ben i höftregionen [700097003]	höftproblem [724630004]	FALSE
+RAKHÖFT - Rak spåret höftprocessen	fraktur på ben i höftregionen [700097003]	höftproblem [724630004]	FALSE
+RF - RF-PROV		mätning av reumafaktor [54921001]	FALSE
+RYGG	fynd som rör ryggen [414252009]	ryggproblem [302258001]	FALSE
+RYGG - RYGG	fynd som rör ryggen [414252009]	ryggproblem [302258001]	FALSE
+SJÄLVDES	självskadebeteende [248062006]	självdestruktivt beteende [1157096002]	FALSE
+SVÄLJ - Sväljningsproblem	har svårt att svälja [288939007]	dysfagi [40739000]	FALSE
+SVÄLJNINGSBESVÄR	har svårt att svälja [288939007]	dysfagi [40739000]	FALSE
+Sekundär bedömning		patient kom för en andra bedömning [310344001]	FALSE
+Sjukdom UNS		sjukdomstyp och/eller sjukdomskategori okänd [3219008]	FALSE
+Stick/Bett		bett [782161000]	FALSE
+Sväljningsbesvär	har svårt att svälja [288939007]	dysfagi [40739000]	FALSE
+Sväljningssvårigheter	har svårt att svälja [288939007]	dysfagi [40739000]	FALSE
+TEL		telefonkontakt [185317003]	FALSE
+TEL - TELEFON		telefonkontakt [185317003]	FALSE
+TRIAGE		triagering [425705009]	FALSE
+Trombolyslarm		stroke [230690007]	FALSE
+Underarm	fynd som rör arm [116307009]	armproblem [724625003]	FALSE
+Underben	fynd som rör nedre extremitet [116312005]	benproblem [724632007]	FALSE
+Ö-ARM	fynd som rör arm [116307009]	armproblem [724625003]	FALSE
+ÖNSKAD U-S AV MYNDIGHET (KIR)	allmän undersökning av patient [162673000]	önskar hälsoundersökning [64521000052105]	FALSE
+ÖNSKAD U-S AV MYNDIGHET (MED)	allmän undersökning av patient [162673000]	önskar hälsoundersökning [64521000052105]	FALSE
+ÖNSKAD U-S AV MYNDIGHET (ORT)	allmän undersökning av patient [162673000]	önskar hälsoundersökning [64521000052105]	FALSE
+ÖVERARM	fynd som rör arm [116307009]	armproblem [724625003]	FALSE
+ÖVERFL - ÖVERFLYTTNING		förflyttning av individ [225209004]	FALSE
+ÖVERFL - Överflyttning från annat sjh		förflyttning av individ [225209004]	FALSE
+ÖVFLYTT - Överflyttning		förflyttning av individ [225209004]	FALSE
+ÖVR - Övrigt		nosct:other	TRUE
+ÖVRIGT		nosct:other	TRUE
+ÖVRIGT - ÖVRIGT		nosct:other	TRUE
+ÖVRIGT - Övrigt		nosct:other	TRUE
+Önskad u-s av myndighet	allmän undersökning av patient [162673000]	önskar hälsoundersökning [64521000052105]	FALSE
+Önskad u-s av myndighet (kir)	allmän undersökning av patient [162673000]	önskar hälsoundersökning [64521000052105]	FALSE
+Önskad u-s av myndighet (med)	allmän undersökning av patient [162673000]	önskar hälsoundersökning [64521000052105]	FALSE
+Önskad u-s av myndighet (ort)	allmän undersökning av patient [162673000]	önskar hälsoundersökning [64521000052105]	FALSE
+Överarm	fynd som rör arm [116307009]	armproblem [724625003]	FALSE
+Övrigt		nosct:other	TRUE
