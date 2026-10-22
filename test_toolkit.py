@@ -1,5 +1,4 @@
 from calibration_curve import weighted_calibration_curve
-from optax.losses import sigmoid_binary_cross_entropy
 from sklearn import metrics
 from tqdm import tqdm
 import numpy as np
@@ -27,12 +26,13 @@ def compute_metrics(results):
     # *** NLL ***
     all_nll = []
     y_true = results["y_true"].to_numpy()
+    weight = results["weight"].to_numpy()
     for col in tqdm(results.select("^y_pred_.*$").columns):
-        all_nll.append(
-            sigmoid_binary_cross_entropy(results[col].to_numpy(), y_true)
-        )
+        # The predictions are probabilities, not logits.
+        p = np.clip(results[col].to_numpy().astype("float64"), 1e-12, 1 - 1e-12)
+        all_nll.append(-(y_true * np.log(p) + (1 - y_true) * np.log1p(-p)))
     all_nll = np.array(all_nll)
-    nll_per_model = all_nll.mean(1)
+    nll_per_model = all_nll @ weight / weight.sum()
     metrics_nll, curves_nll = summarize_curves_from_metric(all_nll, nll_per_model)
     scores["metrics"]["NLL"] = metrics_nll
     scores["curves"]["NLL"] = curves_nll
