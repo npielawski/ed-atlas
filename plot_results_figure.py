@@ -10,7 +10,7 @@ import pandas as pd
 from collections import OrderedDict
 
 df = pd.concat([
-    pd.read_csv("models/metrics_diagnoses.csv"),
+    pd.read_csv("models/metrics_diagnoses.csv", dtype={"diagnosis": str}),
     pd.DataFrame({
         "dataset": ["SwED", "Akkis", "MIMIC"] * 7,
         "diagnosis": [" mortality"] * 7 * 3,

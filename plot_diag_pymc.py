@@ -107,7 +107,7 @@ else:
 while True:
     symptom = all_symptoms[symptom_i].to_dicts()[0]
     symptom_code, symptom_name, symptom_dim = symptom["code"], symptom["term"], symptom["dim_name"]
-    if symptom_name == "nosct:other":
+    if symptom_code == "nosct:other":
         print("Working out risk of death for no symptom")
     else:
         print(f"Working out risk of death for symptom {symptom_name}")
@@ -188,7 +188,7 @@ while True:
 
     matplotlib.rc("font", size=12)
     fig, (axF, axM) = plt.subplots(2, 1, figsize=(15.0, 4.8*3), sharex=True)
-    if symptom_name == "nosct:other":
+    if symptom_code == "nosct:other":
         fig.suptitle("Probability of diagnoses across age and sex\nNo main symptom recorded")
     else:
         fig.suptitle(f"Probability of diagnoses across age and sex\nMain symptom: {symptom_name}")

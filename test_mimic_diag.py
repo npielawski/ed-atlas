@@ -105,15 +105,17 @@ p = pm.math.invlogit(pm.math.dot(D, betas.T))
 betas_mean = idata.posterior.betas.mean(("chain", "draw")).to_numpy()
 p_mean = pm.math.invlogit(pm.math.dot(D, betas_mean))
 
+y_pred = p.eval()
+y_pred_cols = [f"y_pred_{i:04d}" for i in range(y_pred.shape[1])]
 results = (pl
     .DataFrame({
         "y_mean_pred": p_mean.eval(),
-        "y_pred": p.eval().tolist(),
+        "y_pred": y_pred.tolist(),
         "dead": (weights*y).astype("uint32"),
         "alive": (weights*(1-y)).astype("uint32"),
     })
     .with_columns(
-        pl.col("y_pred").list.to_struct(fields=lambda n: f"y_pred_{n:04d}")
+        pl.col("y_pred").list.to_struct(fields=y_pred_cols)
     )
     .unnest("y_pred")
 )

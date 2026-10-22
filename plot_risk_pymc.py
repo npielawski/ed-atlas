@@ -40,7 +40,7 @@ idata_base = az.from_netcdf("models/trace_base.nc")
 all_symptoms = (pl
     .DataFrame({"dim_name": [col for col in X.columns if col.startswith("symptoms_")]})
     .with_columns(
-        pl.col("dim_name").str.strip_chars_start("symptoms_").alias("code")
+        pl.col("dim_name").str.strip_prefix("symptoms_").alias("code")
     )
     .with_columns(
         pl.col("code").replace(old=snomed["code"], new=snomed["term"]).alias("term")
@@ -107,7 +107,7 @@ while True:
 
     matplotlib.rc("font", size=12)
     fig, ax = plt.subplots(2, 1, figsize=(8.0, 11.0), sharex=True)
-    if symptom_name == "nosct:other":
+    if symptom_code == "nosct:other":
         fig.suptitle("Risk of 30 day mortality across age and sex\nNo main symptom recorded")
     else:
         fig.suptitle(f"Risk of 30 day mortality across age and sex\nMain symptom: {symptom_name}")
