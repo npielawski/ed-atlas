@@ -4,10 +4,6 @@ The CSV has the columns that plot_results_figure.py reads (dataset, diagnosis, m
 score, ci_low, ci_high). Mortality rows have the diagnosis " mortality"; chapters have
 their two-digit code. ROC, AP and AP_chance_level are in percent, as printed by the tests.
 
-Besides the metrics of test_toolkit.py, the metric NLL_legacy is written: the NLL as it
-was computed before it was corrected (probabilities passed as logits, rows unweighted).
-It is the value of the first version of the paper, and is not used by any figure.
-
 Already collected (dataset, diagnosis) pairs are skipped, so the script can be restarted.
 
     python collect_metrics.py                       # mortality and all chapters, all posterior draws
@@ -21,8 +17,6 @@ import os
 import sys
 
 import matplotlib.pyplot as plt
-import numpy as np
-from optax.losses import sigmoid_binary_cross_entropy
 
 import test_toolkit
 
@@ -42,25 +36,19 @@ parser.add_argument("--datasets", nargs="+", default=list(SCRIPTS), choices=list
 parser.add_argument("--draws", default="all", help='number of posterior draws to test, or "all"')
 args = parser.parse_args()
 
-# The scripts call compute_metrics once. Wrap it to keep its scores and add NLL_legacy.
-captured = []
+# The scripts call compute_metrics once. Wrap it to keep its scores.
 # Keep the real function on the module: this file can be run again in the same session.
 if not hasattr(test_toolkit, "compute_metrics_original"):
     test_toolkit.compute_metrics_original = test_toolkit.compute_metrics
 compute_metrics = test_toolkit.compute_metrics_original
+captured = []
 
-def compute_metrics_with_legacy(results):
+def compute_metrics_and_keep(results):
     scores = compute_metrics(results)
-    y_true = results["y_true"].to_numpy()
-    legacy = np.array([
-        np.asarray(sigmoid_binary_cross_entropy(results[col].to_numpy(), y_true))
-        for col in results.select("^y_pred_.*$").columns
-    ])
-    scores["metrics"]["NLL_legacy"], _ = test_toolkit.summarize_curves_from_metric(legacy, legacy.mean(1))
     captured.append(scores)
     return scores
 
-test_toolkit.compute_metrics = compute_metrics_with_legacy
+test_toolkit.compute_metrics = compute_metrics_and_keep
 
 def done_pairs():
     if not os.path.exists(OUTPUT):
