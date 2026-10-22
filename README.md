@@ -69,11 +69,10 @@ The folder needs these three files, with the columns the code uses:
 
 ### 2.2 Uppsala AKKIS (`data/uppsala/`)
 
-Access-controlled (Region Uppsala). Three parquet files:
+Access-controlled (Region Uppsala). Two parquet files (the complaint mapping is included in `mappings/`, section 2.5):
 
 | File | Columns used |
 |---|---|
-| `complaint2snomed.parquet` | `ED_PresentedComplaint`, `SCT-id` |
 | `edvisit.parquet` | `PersonId`, `ED_VisitDateTime`, `AgeAtED_Visit`, `Sex`, `DateOfDeath`, `ED_PresentedComplaint` |
 | `healthcarevisits.parquet` | `PersonId`, `MainDiagnosis`, `AdmissionDate`, `DischargeDate` |
 
@@ -106,6 +105,7 @@ These three small files are included in the repository.
 | `obsolete_typos.csv` | corrections of obsolete and mistyped ICD-10 codes |
 | `MIMIC-IV_symptoms_mapped.xlsx` | MIMIC-IV chief complaints mapped to SNOMED CT: 22,672 distinct complaints with their visit counts; unmapped complaints become `nosct:other`. |
 | `missing_terms_JS.xlsx` | English terms for ICD-10 codes missing from the WHO files |
+| `complaint2snomed.parquet` | harmonisation of Uppsala presenting-complaint terms to SNOMED CT (columns used: `ED_PresentedComplaint`, `SCT-id`, a list of integer codes) |
 
 **To download yourself** (licensed classifications, not redistributed here). Place the files in `mappings/` under these names:
 

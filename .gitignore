@@ -6,6 +6,7 @@ mappings/*
 !mappings/obsolete_typos.csv
 !mappings/MIMIC-IV_symptoms_mapped.xlsx
 !mappings/missing_terms_JS.xlsx
+!mappings/complaint2snomed.parquet
 models/
 figures/
 web_data/
