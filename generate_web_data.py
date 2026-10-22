@@ -443,6 +443,7 @@ all_diagnoses_str = sorted(df.select(cs.boolean().exclude("is_male")).columns)
 
 # Most common symptoms first, with the "no symptom" entry last
 symptoms = (df_mort
+    .with_columns(pl.col("symptoms").str.strip_chars("[]"))
     .group_by("symptoms")
     .agg(count=pl.col("count").sum())
     .sort("count", descending=True)
