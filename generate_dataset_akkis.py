@@ -3,7 +3,7 @@ from sklearn.preprocessing import MultiLabelBinarizer
 
 print("Loading dataset...")
 harmonizer = (pl
-    .scan_parquet("data/uppsala/complaint2snomed.parquet")
+    .scan_parquet("mappings/complaint2snomed.parquet")
     .with_columns(
         pl.col("ED_PresentedComplaint")
     )
@@ -63,6 +63,10 @@ print("*** Generating mortality dataset")
 df_mort = (df_core
     .select(["ed_age", "is_male", "mort_30d", "symptoms"])
     .explode("symptoms")
+    .with_columns(
+        # Same "[code]" format as SwED, so that the dummy columns match those of the mortality model.
+        pl.format("[{}]", pl.col("symptoms").cast(pl.String).str.strip_chars("[]")).alias("symptoms")
+    )
     .with_columns(
         pl.col("symptoms").fill_null("nosct:other")
     )
