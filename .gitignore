@@ -1,0 +1,12 @@
+data/*
+!data/maps/
+datasets/
+mappings/*
+!mappings/presenting_complaint_to_snomed.tsv
+!mappings/obsolete_typos.csv
+!mappings/MIMIC-IV_symptoms_mapped.xlsx
+!mappings/missing_terms_JS.xlsx
+models/
+figures/
+web_data/
+__pycache__/
