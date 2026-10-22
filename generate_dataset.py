@@ -295,7 +295,7 @@ df_diag_unique = (df_core
         n_pop=pl.len()
     )
     .sort("diagnosis")
-).sink_parquet("datasets/mortality_unique.parquet")
+).collect().write_parquet("datasets/mortality_unique.parquet")
 
 if prune_diag:
     prev_leaves_to_merge = None
