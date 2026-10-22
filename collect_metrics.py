@@ -44,7 +44,10 @@ args = parser.parse_args()
 
 # The scripts call compute_metrics once. Wrap it to keep its scores and add NLL_legacy.
 captured = []
-compute_metrics = test_toolkit.compute_metrics
+# Keep the real function on the module: this file can be run again in the same session.
+if not hasattr(test_toolkit, "compute_metrics_original"):
+    test_toolkit.compute_metrics_original = test_toolkit.compute_metrics
+compute_metrics = test_toolkit.compute_metrics_original
 
 def compute_metrics_with_legacy(results):
     scores = compute_metrics(results)
