@@ -1,7 +1,8 @@
 """Figure 5: scores of the mortality and diagnosis (chapter) models on SwED, Uppsala and MIMIC-IV.
 
-Reads models/metrics_diagnoses.csv (columns: dataset, diagnosis, metric, score, ci_low, ci_high).
-The mortality scores and the number of data points per chapter are entered below.
+Reads models/metrics_diagnoses.csv, written by collect_metrics.py (columns: dataset, diagnosis, metric,
+score, ci_low, ci_high; the mortality model has the diagnosis " mortality"). The number of data points
+per chapter is entered below.
 """
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mtick
@@ -9,44 +10,10 @@ import numpy as np
 import pandas as pd
 from collections import OrderedDict
 
-df = pd.concat([
-    pd.read_csv("models/metrics_diagnoses.csv", dtype={"diagnosis": str}),
-    pd.DataFrame({
-        "dataset": ["SwED", "Akkis", "MIMIC"] * 7,
-        "diagnosis": [" mortality"] * 7 * 3,
-        "metric": ["NLL"]*3 + ["Brier"]*3 + ["ROC"]*3 + ["AP"]*3 + ["AP_chance_level"]*3 + ["uniform_ECE"]*3 + ["quantile_ECE"]*3,
-        "score": [
-            0.698, 0.702, 0.698,
-            0.017, 0.018, 0.021,
-            88.530, 88.310, 82.480,
-            18.590, 12.870, 10.680,
-            1.91, 1.94, 2.26,
-            0., 0.002, 0.008,
-            0., 0.002, 0.007
-        ],
-        "ci_low": [
-            0.698, 0.701, 0.698,
-            0.017, 0.018, 0.021,
-            88.520, 88.190, 82.24,
-            18.580, 12.876, 10.53,
-            1.91, 1.94, 2.26,
-            0., 0.002, 0.008,
-            0., 0.002, 0.007
-        ],
-        "ci_high": [
-            0.698, 0.702, 0.698,
-            0.017, 0.018, 0.021,
-            88.530, 88.390, 82.69,
-            18.600, 12.895, 10.83,
-            1.91, 1.94, 2.26,
-            0., 0.003, 0.009,
-            0., 0.002, 0.008
-        ],
-    })
-])
+df = pd.read_csv("models/metrics_diagnoses.csv", dtype={"diagnosis": str})
 df["dataset"] = df.dataset.map({"SwED": "train", "Akkis": "uppsala", "MIMIC": "mimic"})
 df = df[(df["diagnosis"].str.len() == 2) | (df["diagnosis"] == " mortality")]
-df["dset_index"] = (df["dataset"] == "test").astype(int)
+df["dset_index"] = df["dataset"].map({"train": 0, "uppsala": 1, "mimic": 2})
 df = df.sort_values(["diagnosis", "dset_index"])
 TERM_NAMES = {
     " mortality": "mortality",
@@ -124,9 +91,10 @@ for i, metric in enumerate(METRICS_NAME.keys()):
 
     if metric == "ROC" or metric == "AP": mloc = 10.
     elif metric == "Brier": mloc = 0.02
-    elif metric == "NLL": mloc = 0.01
+    elif metric == "NLL": mloc = None
     else: mloc = 0.02
-    ax.yaxis.set_major_locator(mtick.MultipleLocator(mloc))
+    if mloc is not None:
+        ax.yaxis.set_major_locator(mtick.MultipleLocator(mloc))
     ax.set_xticks(loc)
     ax.set_xticklabels(db["name"].to_list(), rotation=45, ha='right')
     marginy = plt.margins()[1] * (1 - 0)
