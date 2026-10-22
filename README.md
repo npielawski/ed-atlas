@@ -182,6 +182,15 @@ python test_mimic_diag.py N
 
 The scores are printed, and the four-panel curves (ROC, precision-recall, calibration) are saved in `figures/test/`.
 
+To run all of them (mortality, then the 19 chapters, on the three datasets, in the right order) and collect the scores in `models/metrics_diagnoses.csv`, the table that step 5 reads:
+
+```bash
+python collect_metrics.py                  # all posterior draws
+python collect_metrics.py --draws 200      # quick check
+```
+
+Finished (dataset, diagnosis) pairs are skipped, so the script can be restarted.
+
 ### Step 5. Figures and web data
 
 ```bash
@@ -194,7 +203,7 @@ python generate_web_data.py                       # web_data/*.json
 
 - `plot_risk_pymc.py` plots every symptom; Fig. 3 is `figures/risks_en/risk_21522001.pdf` (abdominal pain).
 - `plot_diag_pymc.py`: set `symptom_to_plot = "21522001"` in the script to plot abdominal pain (Fig. 4), or pass the symptom index as the second argument. It also writes the per-age JSON files in `models/diagnoses/`.
-- `plot_results_figure.py` reads `models/metrics_diagnoses.csv`, the table of the scores printed in step 4, with the columns `dataset` (`SwED`, `Akkis`, `MIMIC`), `diagnosis` (chapter number), `metric`, `score`, `ci_low`, `ci_high`.
+- `plot_results_figure.py` reads `models/metrics_diagnoses.csv`, written by `collect_metrics.py` in step 4, with the columns `dataset` (`SwED`, `Akkis`, `MIMIC`), `diagnosis` (chapter number), `metric`, `score`, `ci_low`, `ci_high`.
 - `generate_web_data.py` needs `plot_risk_pymc.py` to have run first. It adds differentially private noise to the survivor counts (discrete Laplace, ε = 2), so its output changes at every run by design.
 
 ### Step 6. Fig. 2: scatter plots of symptoms and diagnoses
@@ -226,7 +235,7 @@ How the website turns them into points:
 | Fig. 2 | data: `generate_web_data.py`; the plots: the scatter pages of [ed-atlas.org](https://ed-atlas.org) (step 6) |
 | Fig. 3 | `plot_risk_pymc.py` |
 | Fig. 4 | `plot_diag_pymc.py` |
-| Fig. 5 | `plot_results_figure.py` |
+| Fig. 5 | `collect_metrics.py` (scores), `plot_results_figure.py` |
 | Appendix: municipality map | `plot_communes.py` |
 | Appendix: ROC, precision-recall and calibration curves | `test_*.py` (`figures/test/`) |
 | Models | `train_mort.py`, `train_diag.py` |
@@ -240,5 +249,5 @@ The age spline knots are fixed at `[22, 43, 65, 88]` (the weighted 5/35/65/95th 
 
 - Fig. 1 (schematic) and the hospital map of the appendix.
 - The source code of the website that draws the Fig. 2 scatter plots, and the code that produces `kommun_counts.csv`.
-- The step that turns the scores printed in step 4 into `models/metrics_diagnoses.csv`.
+- Table I and the cohort counts quoted in the text, which were computed ad hoc.
 - The raw data (sections 2.1–2.3) and the SNOMED CT files.

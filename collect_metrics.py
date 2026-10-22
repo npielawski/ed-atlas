@@ -10,9 +10,9 @@ It is the value of the first version of the paper, and is not used by any figure
 
 Already collected (dataset, diagnosis) pairs are skipped, so the script can be restarted.
 
-    python collect_metrics.py                       # mortality and all chapters, 200 draws
+    python collect_metrics.py                       # mortality and all chapters, all posterior draws
     python collect_metrics.py --what mortality
-    python collect_metrics.py --draws all --datasets SwED Akkis
+    python collect_metrics.py --draws 200 --datasets SwED Akkis   # quick check with 200 draws
 """
 import argparse
 import csv
@@ -39,7 +39,7 @@ OUTPUT = "models/metrics_diagnoses.csv"
 parser = argparse.ArgumentParser()
 parser.add_argument("--what", nargs="+", default=["mortality", "chapters"], choices=["mortality", "chapters"])
 parser.add_argument("--datasets", nargs="+", default=list(SCRIPTS), choices=list(SCRIPTS))
-parser.add_argument("--draws", default="200", help='number of posterior draws to test, or "all"')
+parser.add_argument("--draws", default="all", help='number of posterior draws to test, or "all"')
 args = parser.parse_args()
 
 # The scripts call compute_metrics once. Wrap it to keep its scores and add NLL_legacy.
