@@ -4,3 +4,15 @@ __pycache__/
 .DS_Store
 to_snd/
 to_snd_stripped/
+data/*
+!data/maps/
+datasets/
+mappings/*
+!mappings/presenting_complaint_to_snomed.tsv
+!mappings/obsolete_typos.csv
+!mappings/MIMIC-IV_symptoms_mapped.xlsx
+!mappings/missing_terms_JS.xlsx
+!mappings/complaint2snomed.parquet
+models/
+figures/
+web_data/
